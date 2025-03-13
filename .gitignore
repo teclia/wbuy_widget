@@ -1,0 +1,21 @@
+# Ignorar node_modules da raiz
+/node_modules
+/dist/*
+!/dist/.gitkeep
+./env
+
+/static/.env
+
+
+# Ignorar node_modules dentro de static
+/static/node_modules
+/static/.env
+
+# Ignorar arquivos gerados pelo build de Vue dentro de static
+/static/dist
+
+# Ignorar arquivos do sistema operacional ou IDEs (opcional)
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
