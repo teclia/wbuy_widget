@@ -122,7 +122,7 @@
 
 
     // Lista de origens permitidas
-    const allowedOrigins = ["http://localhost:8080", "https://widget.wbuy_ai.com.br"];
+    const allowedOrigins = ["http://localhost:6042", "https://widget.wbuy_ai.com.br"];
 
     // Escuta mensagens enviadas pelo iframe
     window.addEventListener("message", (event) => {
@@ -200,7 +200,7 @@
     };
 
     // Carregar configurações
-    fetch(`http://localhost:6041/robots/${wbuy_ai_wbuy_aiId}.json`)
+    fetch(`http://localhost:6001/robots/${wbuy_ai_wbuy_aiId}.json`)
         .then(response => response.json())
 
         .then(wbuy_ai_config => {
@@ -424,8 +424,8 @@
                 }
 
                 const wbuy_ai_iframe = document.createElement("iframe");
-                //wbuy_ai_iframe.src = `http://localhost:8080/${wbuy_ai_wbuy_aiId}`;
-                wbuy_ai_iframe.src = `http://localhost:8080/${wbuy_ai_wbuy_aiId}?${queryString}`;
+                //wbuy_ai_iframe.src = `http://localhost:6042/${wbuy_ai_wbuy_aiId}`;
+                wbuy_ai_iframe.src = `http://localhost:6042/${wbuy_ai_wbuy_aiId}?${queryString}`;
 
                 wbuy_ai_iframe.style.width = "100%";
                 wbuy_ai_iframe.style.height = "100%";
@@ -510,7 +510,7 @@
                 // Ação do botão fechat
                 wbuy_ai_closeButton.addEventListener("click", () => {
                     // Enviar comando para o iframe antes de fechar
-                    wbuy_ai_iframe.contentWindow.postMessage({ action: "closeChat" }, "http://localhost:8080");
+                    wbuy_ai_iframe.contentWindow.postMessage({ action: "closeChat" }, "http://localhost:6042");
 
                     // Fechar o chat
                     //document.body.removeChild(wbuy_ai_container);
@@ -559,7 +559,7 @@
                 setTimeout(() => {
                     const lastUrl = localStorage.getItem("wbuy_ai_last_url");
                     if (lastUrl) {
-                        wbuy_ai_iframe.contentWindow.postMessage({ action: "PAGE_URL_RESPONSE", url: lastUrl }, "http://localhost:8080");
+                        wbuy_ai_iframe.contentWindow.postMessage({ action: "PAGE_URL_RESPONSE", url: lastUrl }, "http://localhost:6042");
                     }
                 }, 1500);
 

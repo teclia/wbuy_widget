@@ -167,14 +167,14 @@ export default {
             messages: [],
             newMessage: "",
             isTyping: false,
-            defaultAvatar: "https://app.wbuy_ai.com.br/imgs/avatar.jpg",
+            defaultAvatar: "https://app.wbuy.ai/imgs/avatar.jpg",
             socket: null,
             typingTimeout: null,
             userId: "",
             alertNewMessage: false,
 
             wbuy_ai_chatTitle: "Assistente",
-            wbuy_ai_chatAvatar: "https://app.wbuy_ai.com.br/imgs/avatar.jpg",
+            wbuy_ai_chatAvatar: "https://app.wbuy.ai/imgs/avatar.jpg",
             wbuy_ai_chatHeaderGradientStart: '#ffffff',
             wbuy_ai_chatHeaderGradientEnd: '#ffffff',
             wbuy_ai_chatHeaderTextColor: '#3d3d3d',
@@ -330,9 +330,6 @@ export default {
                     last_url: this.last_url,
                     params: this.query,                   
                 };
-
-
-                console.log(this.query)
 
 
                 this.messages.push(message);

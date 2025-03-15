@@ -4,6 +4,9 @@ const fs = require('fs');
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  devServer: {
+    port: 6042,
+  },
   outputDir: path.resolve(__dirname, '../dist'),
   chainWebpack: (config) => {
     // Hook no final do processo de build para copiar o arquivo correto
